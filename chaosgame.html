@@ -79,7 +79,7 @@
     resetStartingPoint = ->
       [@newX, @newY]   = [vertices[0][0], vertices[0][1]]
         
-    drawPoint = (centerX, centerY, radius, fillPoint = true) ->
+    drawPoint = (centerX, centerY, radius, fillPoint = on) ->
       context.beginPath()
       context.arc centerX, centerY, radius, 0, Math.PI*2, false
       context.closePath()
