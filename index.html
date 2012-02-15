@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  
+  <title>The Chaos Game</title>
+  
+  <script type="text/javascript" src="http://coffeescript.org/extras/coffee-script.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  
+</head>
+<body>
+
+  <div id="center">
+    Edges <a href="#" onclick="setEdgeCount(2)">2</a>
+    <a href="#" onclick="setEdgeCount(3)">3</a>
+    <a href="#" onclick="setEdgeCount(4)">4</a>
+    <a href="#" onclick="setEdgeCount(5)">5</a>
+    <a href="#" onclick="setEdgeCount(6)">6</a> |
+    Speed <a href="#" onclick="setSpeed(1)">slow</a>
+    <a href="#" onclick="setSpeed(30)">medium</a>
+    <a href="#" onclick="setSpeed(300)">fast</a> |
+    Distance <a href="#" onclick="decrementDivisor()">--</a>
+    <a href="#" onclick="incrementDivisor()">++</a>
+  </div>
+
+  <canvas id="canvas" onclick="toggleRendering()">Your browser does not support the canvas element.</canvas>
+  
+  <script type="text/coffeescript" src="chaosgame.coffee"></script>
+
+</body>
+</html>
