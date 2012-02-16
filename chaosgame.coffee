@@ -1,7 +1,7 @@
 context             = canvas.getContext '2d'
 canvas.width        = window.innerWidth
 canvas.height       = window.innerHeight - 50
-                    
+
 pointSize           = 0.5
 pointsPerStep       = 1
 divisor             = 1.6
@@ -26,7 +26,7 @@ vertices.push  [canvas.width / 2, canvas.height / 1.8]
 
 resetStartingPoint = ->
   [@newX, @newY]   = [vertices[0][0], vertices[0][1]]
-    
+
 drawPoint = (centerX, centerY, radius, fillPoint = on) ->
   context.beginPath()
   context.arc centerX, centerY, radius, 0, Math.PI*2, false
@@ -42,7 +42,7 @@ drawFractalPoint = ->
       @newX = (@newX + vertex[0] * divisor) / (divisor + 1)
       @newY = (@newY + vertex[1] * divisor) / (divisor + 1)
       break
-      
+
   drawPoint @newX, @newY, pointSize, true
 
 renderFractal = ->
@@ -64,18 +64,18 @@ clearCanvas = ->
 
 @setSpeed = (speed = 1) -> pointsPerStep = speed
 
-@setEdgeCount = (count = 3) -> 
+@setEdgeCount = (count = 3) ->
   edgeCount = count
   resetStartingPoint()
   clearCanvas()
-  
-@incrementDivisor = -> 
+
+@incrementDivisor = ->
   if divisor < maximumDivisor
     divisor += divisorStep
     resetStartingPoint()
     clearCanvas()
 
-@decrementDivisor = -> 
+@decrementDivisor = ->
   if divisor > minimumDivisor
     divisor -= divisorStep
     resetStartingPoint()
